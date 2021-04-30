@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>JS1-4</title>
+</head>
+
+<body>
+  <script>
+    'use strict';
+
+    const title = ('======================\n現在持っているタスク一覧\n======================');
+    console.log(title);
+
+    const items = [
+      ['机を片付ける', '掃除'],
+      ['牛乳を買う', '買い物'],
+      ['散歩する', '運動'],
+    ];
+
+    const displayItems = function () {
+      items.forEach(function (value, index) {
+        console.log(index + '：【内容】' + value[0] + '、【ジャンル】' + value[1])
+      });
+    };
+    displayItems();
+
+
+    const answer = prompt('タスクを入力してください');
+    items[0].push(answer);
+
+    const genre = prompt('ジャンルを入力してください');
+    items[1].push(genre);
+
+    alert('新しいタスクを入力しました');
+    const result = prompt('「確認,追加,削除,終了」の４つのいずれかを入力してください')
+
+    console.log(title);
+    displayItems();
+
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>
