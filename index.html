@@ -13,38 +13,37 @@
     const title = ('======================\n現在持っているタスク一覧\n======================');
     console.log(title);
 
+
     const items = [
-      ['机を片付ける', '掃除'],
-      ['牛乳を買う', '買い物'],
-      ['散歩する', '運動'],
+      { content: '机を片付ける', group: '掃除' },
+      { content: '牛乳を買う', group: '買い物' },
+      { content: '散歩する', group: '運動' },
     ];
 
+
+
     const displayItems = function () {
-      items.forEach(function (value, index) {
-        console.log(index + '：【内容】' + value[0] + '、【ジャンル】' + value[1])
+      items.forEach(function (item, index) {
+        console.log(index + '：【内容】' + (item.content) + '、【ジャンル】' + (item.group))
       });
     };
     displayItems();
 
 
     const answer = prompt('タスクを入力してください');
-    items[0].push(answer);
-
     const genre = prompt('ジャンルを入力してください');
-    items[1].push(genre);
+
+    const answers = { content: answer, group: genre };
+
+    items.push(answers);
+
+
 
     alert('新しいタスクを入力しました');
     const result = prompt('「確認,追加,削除,終了」の４つのいずれかを入力してください')
 
     console.log(title);
     displayItems();
-
-
-
-
-
-
-
 
   </script>
 </body>
